@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="ko">
+
+                                                                                <head>
+                <script type="text/javascript">if (!window.T) { window.T = {} }
+window.T.config = {"TOP_SSL_URL":"https://www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"","NEXT_PAGE":"","BLOG":{"id":3243557,"name":"rosypark","title":"Rosy's Artificial Intelligence Blog","isDormancy":false,"nickName":"RosyPark","status":"open","profileStatus":"normal"},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https://www.tistory.com/auth/login/?redirectUrl=https://rosypark.tistory.com/51","DEFAULT_URL":"https://rosypark.tistory.com","USER":{"name":null,"homepage":null,"id":0,"profileImage":null},"SUBSCRIPTION":{"status":"none","isConnected":false,"isPending":false,"isWait":false,"isProcessing":false,"isNone":true},"IS_LOGIN":false,"HAS_BLOG":false,"IS_SUPPORT":false,"IS_SCRAPABLE":false,"TOP_URL":"http://www.tistory.com","JOIN_URL":"https://www.tistory.com/member/join","PHASE":"prod","ROLE_GROUP":"visitor"};
+window.T.entryInfo = {"entryId":51,"isAuthor":false,"categoryId":726150,"categoryLabel":"인공지능/머신러닝"};
+window.appInfo = {"domain":"tistory.com","topUrl":"https://www.tistory.com","loginUrl":"https://www.tistory.com/auth/login","logoutUrl":"https://www.tistory.com/auth/logout"};
+window.initData = {};
+
+window.TistoryBlog = {
+    basePath: "",
+    url: "https://rosypark.tistory.com",
+    tistoryUrl: "https://rosypark.tistory.com",
+    manageUrl: "https://rosypark.tistory.com/manage",
+    token: "V+ETSvPQI/SWxshA1fNQJv+VtHRiQJOB/4z6pA1PySlngVybBvy3BO/tkOILnF02"
+};
+var servicePath = "";
+var blogURL = "";</script>
+
+                
+                
+                
+                        <!-- BusinessLicenseInfo - START -->
+        
+            <link href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/plugin/BusinessLicenseInfo/style.css" rel="stylesheet" type="text/css"/>
+
+            <script>function switchFold(entryId) {
+    var businessLayer = document.getElementById("businessInfoLayer_" + entryId);
+
+    if (businessLayer) {
+        if (businessLayer.className.indexOf("unfold_license") > 0) {
+            businessLayer.className = "business_license_layer";
+        } else {
+            businessLayer.className = "business_license_layer unfold_license";
+        }
+    }
+}
+</script>
+
+        
+        <!-- BusinessLicenseInfo - END -->
+        <!-- DaumShow - START -->
+        <style type="text/css">#daumSearchBox {
+    height: 21px;
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+    margin: 5px auto;
+    padding: 0;
+}
+
+#daumSearchBox input {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#daumSearchBox #daumLogo {
+    width: 34px;
+    height: 21px;
+    float: left;
+    margin-right: 5px;
+    background-image: url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+}
+
+#daumSearchBox #show_q {
+    background-color: transparent;
+    border: none;
+    font: 12px Gulim, Sans-serif;
+    color: #555;
+    margin-top: 4px;
+    margin-right: 15px;
+    float: left;
+}
+
+#daumSearchBox #show_btn {
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+    width: 37px;
+    height: 21px;
+    float: left;
+    margin: 0;
+    cursor: pointer;
+    text-indent: -1000em;
+}
+</style>
+
+        <!-- DaumShow - END -->
+
+<!-- System - START -->
+
+<!-- System - END -->
+
+        <!-- TistoryProfileLayer - START -->
+        <link href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/plugin/TistoryProfileLayer/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/plugin/TistoryProfileLayer/script.js"></script>
+
+        <!-- TistoryProfileLayer - END -->
+
+                
+                <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="format-detection" content="telephone=no">
+<script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//t1.daumcdn.net/tiara/js/v1/tiara.min.js"></script><meta name="referrer" content="always"/>
+<meta name="google-adsense-platform-account" content="ca-host-pub-9691043933427338"/>
+<meta name="google-adsense-platform-domain" content="tistory.com"/>
+<meta name="description" content="1. 시계열(Time series) 데이터란? 시간에서 순차적으로 (sequentially) 관측한 값들의 집합 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요 2. 시계열 자료 분석 방법 일변량 시계열 분석 - {Yt ; t = 1,2,..,T}만을 가지고 분석 회귀분석(계량경제) 방법, BOX-JENKINS 방법 수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 (빠른) 시계열 자료에 적용 지수 평활법, 시계열 분해 방법 다소 직관적인 방법이며 시간에 따른 변동이 느린.."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://rosypark.tistory.com/51"/>
+<meta property="og.article.author" content="RosyPark"/>
+<meta property="og:site_name" content="Rosy's Artificial Intelligence Blog"/>
+<meta property="og:title" content="시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법"/>
+<meta name="by" content="RosyPark"/>
+<meta property="og:description" content="1. 시계열(Time series) 데이터란? 시간에서 순차적으로 (sequentially) 관측한 값들의 집합 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요 2. 시계열 자료 분석 방법 일변량 시계열 분석 - {Yt ; t = 1,2,..,T}만을 가지고 분석 회귀분석(계량경제) 방법, BOX-JENKINS 방법 수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 (빠른) 시계열 자료에 적용 지수 평활법, 시계열 분해 방법 다소 직관적인 방법이며 시간에 따른 변동이 느린.."/>
+<meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3dfoV%2FbtqySjM2RF2%2FFGQQ3O6UKLrfT9kzBbIZZk%2Fimg.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@TISTORY"/>
+<meta name="twitter:title" content="시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법"/>
+<meta name="twitter:description" content="1. 시계열(Time series) 데이터란? 시간에서 순차적으로 (sequentially) 관측한 값들의 집합 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요 2. 시계열 자료 분석 방법 일변량 시계열 분석 - {Yt ; t = 1,2,..,T}만을 가지고 분석 회귀분석(계량경제) 방법, BOX-JENKINS 방법 수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 (빠른) 시계열 자료에 적용 지수 평활법, 시계열 분해 방법 다소 직관적인 방법이며 시간에 따른 변동이 느린.."/>
+<meta property="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3dfoV%2FbtqySjM2RF2%2FFGQQ3O6UKLrfT9kzBbIZZk%2Fimg.png"/>
+<meta content="https://rosypark.tistory.com/51" property="dg:plink" content="https://rosypark.tistory.com/51"/>
+<meta name="plink"/>
+<meta name="title" content="시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법"/>
+<meta name="article:media_name" content="Rosy's Artificial Intelligence Blog"/>
+<meta property="article:mobile_url" content="https://rosypark.tistory.com/m/51"/>
+<meta property="article:pc_url" content="https://rosypark.tistory.com/51"/>
+<meta property="article:mobile_view_url" content="https://rosypark.tistory.com/m/51"/>
+<meta property="article:pc_view_url" content="https://rosypark.tistory.com/51"/>
+<meta property="article:talk_channel_view_url" content="https://rosypark.tistory.com/m/51"/>
+<meta property="article:pc_service_home" content="https://www.tistory.com"/>
+<meta property="article:mobile_service_home" content="https://www.tistory.com/m"/>
+<meta property="article:txid" content="3243557_51"/>
+<meta property="article:published_time" content="2019-10-07T23:27:54+09:00"/>
+<meta property="og:regDate" content="20191007112754"/>
+<meta property="article:modified_time" content="2020-02-19T19:28:04+09:00"/>
+<link rel="icon" sizes="any" href="https://t1.daumcdn.net/tistory_admin/favicon/tistory_favicon_32x32.ico"/>
+<link rel="icon" type="image/svg+xml" href="https://t1.daumcdn.net/tistory_admin/top_v2/bi-tistory-favicon.svg"/>
+<link rel="apple-touch-icon" href="https://t1.daumcdn.net/tistory_admin/top_v2/tistory-apple-touch-favicon.png"/>
+<link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/www/style/font.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/content.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/uselessPMargin.css"/>
+<script type="text/javascript">(function() {
+    var tjQuery = jQuery.noConflict(true);
+    window.tjQuery = tjQuery;
+    window.orgjQuery = window.jQuery; window.jQuery = tjQuery;
+    window.jQuery = window.orgjQuery; delete window.orgjQuery;
+})()</script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/script/base.js"></script>
+<script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+                
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<title>시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법</title>
+	<link rel="alternate" type="application/rss+xml" title="Rosy's Artificial Intelligence Blog" href="https://rosypark.tistory.com/rss" />
+
+	<link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/3243557/skin/style.css?_version_=1598407294">
+	<link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/3243557/skin/images/font.css?_version_=1598407294">
+
+	<!--[if lt IE 9]>
+	<script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+	<script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.2.1.min.js">
+	
+	
+	</script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } }); </script> <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+	<script type="text/javascript">
+
+var omitformtags=["input", "textarea", "select"]
+
+omitformtags=omitformtags.join("|")
+
+function disableselect(e){
+if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+return false
+}
+
+function reEnable(){
+return true
+}
+
+if (typeof document.onselectstart!="undefined")
+document.onselectstart=new Function ("return false")
+else{
+document.onmousedown=disableselect
+document.onmouseup=reEnable
+}
+
+</script>
+                                                <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+                
+                
+                
+
+
+	
+	
+	
+	
+	<!--<![endif]-->
+
+                
+                
+                <style type="text/css">.another_category {
+    border: 1px solid #E5E5E5;
+    padding: 10px 10px 5px;
+    margin: 10px 0;
+    clear: both;
+}
+
+.another_category h4 {
+    font-size: 12px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #E5E5E5 !important;
+    padding: 2px 0 6px !important;
+}
+
+.another_category h4 a {
+    font-weight: bold !important;
+}
+
+.another_category table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+* html .another_category table {
+    width: auto !important;
+}
+
+*:first-child + html .another_category table {
+    width: auto !important;
+}
+
+.another_category th, .another_category td {
+    padding: 0 0 4px !important;
+}
+
+.another_category th {
+    text-align: left;
+    font-size: 12px !important;
+    font-weight: normal;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.another_category td {
+    text-align: right;
+    width: 80px;
+    font-size: 11px;
+}
+
+.another_category th a {
+    font-weight: normal;
+    text-decoration: none;
+    border: none !important;
+}
+
+.another_category th a.current {
+    font-weight: bold;
+    text-decoration: none !important;
+    border-bottom: 1px solid !important;
+}
+
+.another_category th span {
+    font-weight: normal;
+    text-decoration: none;
+    font: 10px Tahoma, Sans-serif;
+    border: none !important;
+}
+
+.another_category_color_gray, .another_category_color_gray h4 {
+    border-color: #E5E5E5 !important;
+}
+
+.another_category_color_gray * {
+    color: #909090 !important;
+}
+
+.another_category_color_gray th a.current {
+    border-color: #909090 !important;
+}
+
+.another_category_color_gray h4, .another_category_color_gray h4 a {
+    color: #737373 !important;
+}
+
+.another_category_color_red, .another_category_color_red h4 {
+    border-color: #F6D4D3 !important;
+}
+
+.another_category_color_red * {
+    color: #E86869 !important;
+}
+
+.another_category_color_red th a.current {
+    border-color: #E86869 !important;
+}
+
+.another_category_color_red h4, .another_category_color_red h4 a {
+    color: #ED0908 !important;
+}
+
+.another_category_color_green, .another_category_color_green h4 {
+    border-color: #CCE7C8 !important;
+}
+
+.another_category_color_green * {
+    color: #64C05B !important;
+}
+
+.another_category_color_green th a.current {
+    border-color: #64C05B !important;
+}
+
+.another_category_color_green h4, .another_category_color_green h4 a {
+    color: #3EA731 !important;
+}
+
+.another_category_color_blue, .another_category_color_blue h4 {
+    border-color: #C8DAF2 !important;
+}
+
+.another_category_color_blue * {
+    color: #477FD6 !important;
+}
+
+.another_category_color_blue th a.current {
+    border-color: #477FD6 !important;
+}
+
+.another_category_color_blue h4, .another_category_color_blue h4 a {
+    color: #1960CA !important;
+}
+
+.another_category_color_violet, .another_category_color_violet h4 {
+    border-color: #E1CEEC !important;
+}
+
+.another_category_color_violet * {
+    color: #9D64C5 !important;
+}
+
+.another_category_color_violet th a.current {
+    border-color: #9D64C5 !important;
+}
+
+.another_category_color_violet h4, .another_category_color_violet h4 a {
+    color: #7E2CB5 !important;
+}
+</style>
+
+                
+                <link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/revenue.css"/>
+<link rel="canonical" href="https://rosypark.tistory.com/51"/>
+
+<!-- BEGIN STRUCTURED_DATA -->
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https://rosypark.tistory.com/51","name":null},"url":"https://rosypark.tistory.com/51","headline":"시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법","description":"1. 시계열(Time series) 데이터란? 시간에서 순차적으로 (sequentially) 관측한 값들의 집합 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요 2. 시계열 자료 분석 방법 일변량 시계열 분석 - {Yt ; t = 1,2,..,T}만을 가지고 분석 회귀분석(계량경제) 방법, BOX-JENKINS 방법 수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 (빠른) 시계열 자료에 적용 지수 평활법, 시계열 분해 방법 다소 직관적인 방법이며 시간에 따른 변동이 느린..","author":{"@type":"Person","name":"RosyPark","logo":null},"image":{"@type":"ImageObject","url":"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3dfoV%2FbtqySjM2RF2%2FFGQQ3O6UKLrfT9kzBbIZZk%2Fimg.png","width":"800px","height":"800px"},"datePublished":"2019-10-07T23:27:54+09:00","dateModified":"2020-02-19T19:28:04+09:00","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png","width":"800px","height":"800px"}}}
+</script>
+<!-- END STRUCTURED_DATA -->
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/dialog.css"/>
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/www/style/top/font.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/postBtn.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/comment.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/style/tistory.css"/>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/script/common.js"></script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/script/comment.js" defer=""></script>
+
+                
+                </head>
+
+<body id="tt-body-page">
+
+	<div id="dkIndex">
+		<a href="#dkBody">본문 바로가기</a>
+		<a href="#dkGnb">메뉴 바로가기</a>
+	</div>
+
+	<div id="dkWrap" class="wrap_skin ">
+		<div id="dkHead" role="banner" class="area_head ">
+			<h1 class="screen_out">Rosy's Artificial Intelligence Blog</h1>
+			<div class="area_profile ">
+				<a class="link_profile" href="/"><img src="https://tistory1.daumcdn.net/tistory/3243557/attach/9d5a230c975b4d7b8552d668a4d6aa42" width="50" height="50" class="img_profile" alt="프로필사진"></a>
+				<div class="info_profile">
+					<button type="button" class="btn_name">RosyPark
+						<span class="ico_skin ico_name"></span>
+					</button>
+					<ul class="list_name">
+						<li><a href="https://rosypark.tistory.com/manage/entry/post" class="link_name">글쓰기</a></li>
+						<li><a href="https://rosypark.tistory.com/manage" class="link_name">관리</a></li>
+						<li class="box_division"><a href="https://rosypark.tistory.com/tag" class="link_name">태그</a></li>
+						<li><a href="https://rosypark.tistory.com/guestbook" class="link_name">방명록</a></li>
+						<li><a href="https://rosypark.tistory.com/rss" class="link_name">RSS</a></li>
+					</ul>
+					<p class="txt_condition">Rosy's Artificial Intelligence Blog</p>
+				</div>
+			</div>
+
+			<button type="button" class="btn_menu">
+				<span class="ico_skin ico_menu">카테고리 메뉴열기</span>
+			</button>
+		</div>
+
+		<div class="dimmed_layer"></div>
+
+		<button type="button" class="btn_close">
+			<span class="ico_skin ico_close">닫기</span>
+		</button>
+
+		<div class="area_menu">
+			
+				<div class="area_search">
+					<button type="button" class="btn_search">
+						<span class="ico_skin ico_search">검색하기</span>
+					</button>
+					<form action="#" method="get" class="frm_search" onsubmit="try {
+    window.location.href = '/search' + '/' + looseURIEncode(document.getElementsByName('search')[0].value);
+    document.getElementsByName('search')[0].value = '';
+    return false;
+} catch (e) {}">
+						<fieldset>
+							<legend class="screen_out">검색하기 폼</legend>
+							<label for="tfSearch" class="ico_skin lab_search">검색하기</label>
+							<input type="text" name="search" value="" class="tf_search">
+						</fieldset>
+					</form>
+				</div>
+			
+
+			<div role="navigation" class="area_navi">
+				<button type="button" class="btn_cate">CATEGORY <span class="ico_skin ico_cate"></span></button>
+
+				<div class="list_cate">
+					<ul class="tt_category"><li class=""><a href="/category" class="link_tit"> 분류 전체보기 <span class="c_cnt">(324)</span> </a>
+  <ul class="category_list"><li class=""><a href="/category/Rosy%20Park" class="link_item"> Rosy Park <span class="c_cnt">(0)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/Rosy%20Park/%EB%B9%84%EA%B3%B5%EA%B0%9C%EC%A2%8C%ED%91%9C" class="link_sub_item"> 비공개좌표 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/Programming" class="link_item"> Programming <span class="c_cnt">(181)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/Programming/FULL%20STACK" class="link_sub_item"> FULL STACK <span class="c_cnt">(10)</span> </a></li>
+<li class=""><a href="/category/Programming/DATABASE" class="link_sub_item"> DATABASE <span class="c_cnt">(12)</span> </a></li>
+<li class=""><a href="/category/Programming/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0" class="link_sub_item"> 자료구조 <span class="c_cnt">(14)</span> </a></li>
+<li class=""><a href="/category/Programming/%EC%84%9C%EB%B2%84%EC%99%80%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="link_sub_item"> 서버와 네트워크 <span class="c_cnt">(14)</span> </a></li>
+<li class=""><a href="/category/Programming/Cloud" class="link_sub_item"> Cloud <span class="c_cnt">(30)</span> </a></li>
+<li class=""><a href="/category/Programming/DevOps" class="link_sub_item"> DevOps <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/Programming/--------------------" class="link_sub_item"> -------------------- <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/Programming/JAVA%26JAVASCRIPT%EB%B9%84%EA%B5%90" class="link_sub_item"> JAVA&amp;JAVASCRIPT비교 <span class="c_cnt">(4)</span> </a></li>
+<li class=""><a href="/category/Programming/JAVA" class="link_sub_item"> JAVA <span class="c_cnt">(6)</span> </a></li>
+<li class=""><a href="/category/Programming/Android" class="link_sub_item"> Android <span class="c_cnt">(24)</span> </a></li>
+<li class=""><a href="/category/Programming/JAVASCRIPT" class="link_sub_item"> JAVASCRIPT <span class="c_cnt">(6)</span> </a></li>
+<li class=""><a href="/category/Programming/React" class="link_sub_item"> React <span class="c_cnt">(16)</span> </a></li>
+<li class=""><a href="/category/Programming/HTML%2Bcss" class="link_sub_item"> HTML+css <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/Programming/python" class="link_sub_item"> python <span class="c_cnt">(25)</span> </a></li>
+<li class=""><a href="/category/Programming/C%23" class="link_sub_item"> C# <span class="c_cnt">(7)</span> </a></li>
+<li class=""><a href="/category/Programming/Git%26Bash" class="link_sub_item"> Git&amp;Bash <span class="c_cnt">(5)</span> </a></li>
+<li class=""><a href="/category/Programming/R" class="link_sub_item"> R <span class="c_cnt">(1)</span> </a></li>
+<li class=""><a href="/category/Programming/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%98%EB%91%A1%ED%95%98%EC%9D%B4%EB%B8%8C" class="link_sub_item"> 빅데이터하둡하이브 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/Programming/React-Next.js" class="link_sub_item"> React-Next.js <span class="c_cnt">(1)</span> </a></li>
+<li class=""><a href="/category/Programming/Node" class="link_sub_item"> Node <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/Programming/Spring" class="link_sub_item"> Spring <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5" class="link_item"> 인공지능 <span class="c_cnt">(78)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EC%BA%90%EA%B8%80" class="link_sub_item"> 캐글 <span class="c_cnt">(6)</span> </a></li>
+<li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8" class="link_sub_item"> 블록체인 <span class="c_cnt">(10)</span> </a></li>
+<li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D" class="link_sub_item"> 머신러닝 <span class="c_cnt">(34)</span> </a></li>
+<li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EB%94%A5%EB%9F%AC%EB%8B%9D" class="link_sub_item"> 딥러닝 <span class="c_cnt">(17)</span> </a></li>
+<li class=""><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC" class="link_sub_item"> 자연어처리 <span class="c_cnt">(11)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/Engineering" class="link_item"> Engineering <span class="c_cnt">(20)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/Engineering/%EC%9C%A0%ED%95%9C%EC%9A%94%EC%86%8C%ED%95%B4%EC%84%9D" class="link_sub_item"> 유한요소해석 <span class="c_cnt">(14)</span> </a></li>
+<li class=""><a href="/category/Engineering/signal" class="link_sub_item"> signal <span class="c_cnt">(6)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EC%9E%A1%EB%8F%99%EC%82%AC%EB%8B%88%EA%B3%B5%EB%B6%80" class="link_item"> 잡동사니공부 <span class="c_cnt">(35)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EC%9E%A1%EB%8F%99%EC%82%AC%EB%8B%88%EA%B3%B5%EB%B6%80/%5BTrends%5D" class="link_sub_item"> [Trends] <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%9E%A1%EB%8F%99%EC%82%AC%EB%8B%88%EA%B3%B5%EB%B6%80/%EC%9B%90%EC%84%9C%EC%9D%BD%EA%B8%B0" class="link_sub_item"> 원서읽기 <span class="c_cnt">(7)</span> </a></li>
+<li class=""><a href="/category/%EC%9E%A1%EB%8F%99%EC%82%AC%EB%8B%88%EA%B3%B5%EB%B6%80/%EA%B8%B0%EC%82%AC%EC%9D%BD%EA%B8%B0" class="link_sub_item"> 기사읽기 <span class="c_cnt">(28)</span> </a></li>
+<li class=""><a href="/category/%EC%9E%A1%EB%8F%99%EC%82%AC%EB%8B%88%EA%B3%B5%EB%B6%80/%EC%B7%A8%EB%AF%B8" class="link_sub_item"> 취미 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EC%BB%B4%ED%93%A8%ED%84%B0" class="link_item"> 컴퓨터 <span class="c_cnt">(8)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EC%BB%B4%ED%93%A8%ED%84%B0/%EC%9A%B0%EB%B6%84%ED%88%AC" class="link_sub_item"> 우분투 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%BB%B4%ED%93%A8%ED%84%B0/Computer" class="link_sub_item"> Computer <span class="c_cnt">(8)</span> </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+					<ul class="menu_profile">
+						<li><a href="https://rosypark.tistory.com/guestbook">방명록</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<hr class="hide">
+
+		
+
+		<div id="dkContent" class="cont_skin" role="main">
+			<div id="cMain">
+
+				
+
+				
+
+				
+
+				            
+                
+	<div id="mArticle" class="article_skin">
+
+		
+
+		
+			<div class="skin_view">
+				<h2 id="dkBody" class="screen_out">티스토리 뷰</h2>
+				<div class="area_title">
+					<strong class="tit_category"><a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D">인공지능/머신러닝</a></strong>
+					<h3 class="tit_post"><a href="/51">시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법</a></h3>
+					<span class="txt_detail my_post">RosyPark
+						<span class="txt_bar"></span>2019. 10. 7. 23:27
+						
+					</span>
+				</div>
+				<div class="area_view">
+					            <!-- System - START -->
+
+<!-- System - END -->
+
+            <div class="tt_article_useless_p_margin contents_style"><h3 data-ke-size="size23">1. 시계열(Time series) 데이터란?</h3>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span style="letter-spacing: 0px;">시간에서 순차적으로 (sequentially) 관측한 값들의 집합 </span></li>
+<li>독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징</li>
+<li>독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요&nbsp;</li>
+</ul>
+<p>&nbsp;</p>
+<h3 data-ke-size="size23">2. <span>시계열 자료 분석 방법</span></h3>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span>일변량</span><span> 시계열 분석 </span><span>- {</span><span>Yt</span><span> ; t = 1,2,..,T}</span><span>만을 가지고 분석</span>
+<ul style="list-style-type: disc;">
+<li><span>회귀분석</span><span>(</span><span>계량경제</span><span>) </span><span>방법</span><span>, BOX-JENKINS </span><span>방법</span>
+<ul style="list-style-type: disc;">
+<li><span>수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 </span><span>(</span><span>빠른</span><span>) </span><span>시계열 자료에 적용</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span>지수 </span><span>평활법</span><span>, </span><span>시계열 분해 방법</span>
+<ul style="list-style-type: disc;">
+<li><span>다소 직관적인 방법이며 시간에 따른 변동이 느린 데이터를 분석하는데 사용</span></li>
+</ul>
+</li>
+<li><span>다중 시계열 분석 </span><span>- {</span><span>Yt</span><span> ; t = 1,2,..,T}</span><span>와 설명변수</span><span>(</span><span>입력</span><span>) {</span><span>Xt</span><span> ; t = 1,2,..,T} </span><span>가 있는 경우</span>
+<ul style="list-style-type: disc;">
+<li><span>회귀모형</span><span>(</span><span>계량 경제 모형</span><span>)</span></li>
+<li><span>전이함수 모형</span><span>(Transfer function model)</span></li>
+<li><span>개입분석</span><span>(intervention analysis)</span></li>
+<li><span>상태공간분석</span><span>(State space analysis) </span></li>
+<li><span>다변량</span><span> </span><span>ARIMA </span><span>모형</span><span></span><span></span><span></span></li>
+</ul>
+</li>
+</ul>
+<h3 data-ke-size="size23"><span>3. 정상 확률 과정과 비 정상 확률 과정&nbsp;</span></h3>
+<p><span style="color: #333333;">3.1 정상 확률 과정&nbsp;</span></p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span style="color: #333333;">협의의 정상 확률 과정</span><span style="color: #333333;">(strictly stationary process, strong stationary process)</span></li>
+<li><span>확률 과정의 모든 모멘트</span><span>(moment)</span><span>가 시간 차이</span><span>(time lag)</span><span>에만 의존하고 절대 시간에 의존하지 않는 것</span></li>
+<li><span>자기상관계수 함수</span><span>(auto-correlation function)&nbsp;</span><span>줄여서 </span><span>ACF</span></li>
+<li><span style="letter-spacing: 0px;">시간이 지나도 신호의 확률적 특성이 그대로 유지되는 확률 과정&nbsp;</span>
+<ul style="list-style-type: disc;">
+<li><span style="letter-spacing: 0px;"><b>시간의 추이와 관계없이 평균 및 분산이 불변하거나 시점간의 공분산이 기준 시점과 무관한 형태의 시계열</b> </span></li>
+</ul>
+</li>
+</ul>
+<p><b><span><span># stationarity check</span></span></b></p>
+<p><span><span>(1) </span></span><span style="color: #333333;">눈으로 직관적 확인 </span><span style="color: #333333;">~ STL, </span><b><span style="color: #333333;">Rolling statistics(moving average)&nbsp;</span></b></p>
+<p><span><span>(2) </span></span><span>Dickey-</span><span>FUller</span><span> test</span></p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>시계열 모델을 분석하고 예측하기 위해서는 정상적 조건이 확보되어야함</li>
+<li>1979년 David Dickey와 Wayne Fuller 가 고안안 검정법</li>
+</ul>
+<p><figure class="imageblock widthContent" data-origin-width="388" data-origin-height="234"><span data-url="https://blog.kakaocdn.net/dn/3dfoV/btqySjM2RF2/FGQQ3O6UKLrfT9kzBbIZZk/img.png" data-phocus="https://blog.kakaocdn.net/dn/3dfoV/btqySjM2RF2/FGQQ3O6UKLrfT9kzBbIZZk/img.png"><img src="https://blog.kakaocdn.net/dn/3dfoV/btqySjM2RF2/FGQQ3O6UKLrfT9kzBbIZZk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3dfoV%2FbtqySjM2RF2%2FFGQQ3O6UKLrfT9kzBbIZZk%2Fimg.png" data-origin-width="388" data-origin-height="234" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<figure class="imageblock alignCenter" data-origin-width="1500" data-origin-height="251"><span data-url="https://blog.kakaocdn.net/dn/b8ZKHD/btqySkkSeLh/h0XcS09ec6GNEfLAOd61d0/img.png" data-phocus="https://blog.kakaocdn.net/dn/b8ZKHD/btqySkkSeLh/h0XcS09ec6GNEfLAOd61d0/img.png"><img src="https://blog.kakaocdn.net/dn/b8ZKHD/btqySkkSeLh/h0XcS09ec6GNEfLAOd61d0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb8ZKHD%2FbtqySkkSeLh%2Fh0XcS09ec6GNEfLAOd61d0%2Fimg.png" data-origin-width="1500" data-origin-height="251" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span>3.2 비정상 확률 과정</span></p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span>시계열이 안정적이지 않을 때에는 로그를 이용하거나 차분을 통해 시계열을 안정적으로 변환한 뒤에 분석 시행 </span><span></span></li>
+</ul>
+<p><figure class="imageblock alignCenter" data-origin-width="704" data-origin-height="522"><span data-url="https://blog.kakaocdn.net/dn/b0Z7wx/btqyRNBBRlR/Dqb2gHMsuxtdA0y3ojSOJk/img.png" data-phocus="https://blog.kakaocdn.net/dn/b0Z7wx/btqyRNBBRlR/Dqb2gHMsuxtdA0y3ojSOJk/img.png"><img src="https://blog.kakaocdn.net/dn/b0Z7wx/btqyRNBBRlR/Dqb2gHMsuxtdA0y3ojSOJk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb0Z7wx%2FbtqyRNBBRlR%2FDqb2gHMsuxtdA0y3ojSOJk%2Fimg.png" data-origin-width="704" data-origin-height="522" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 data-ke-size="size23">&nbsp;</h3>
+<h3 data-ke-size="size23">4. 시계열 데이터 요소</h3>
+<ul style="list-style-type: square;" data-ke-list-type="square">
+<li><span>추세</span><span>(Trend)</span><span>: </span><span>장기적으로 나타나는 변동 패턴</span></li>
+<li><span>계절성</span><span>(Seasonal)</span><span>: </span><span>주</span><span>,</span><span>월</span><span>,</span><span>분기</span><span>,</span><span>반기 단위 등 이미 알려진 시간의 주기로 나타나는 패턴</span></li>
+<li><span>주기</span><span>(Cyclic)</span><span>: </span><span>최소 </span><span>2 </span><span>년 단위로 나타나는 고정된 기간이 아닌 장기적인 변동</span></li>
+<li><span>랜덤요소 </span><span>(random/residual/remainder)</span><span></span></li>
+</ul>
+<p><figure class="imageblock alignCenter" data-origin-width="660" data-origin-height="125"><span data-url="https://blog.kakaocdn.net/dn/bXa45H/btqySrRBdfP/EOcRgqcVbqZv2yukMZzckk/img.png" data-phocus="https://blog.kakaocdn.net/dn/bXa45H/btqySrRBdfP/EOcRgqcVbqZv2yukMZzckk/img.png"><img src="https://blog.kakaocdn.net/dn/bXa45H/btqySrRBdfP/EOcRgqcVbqZv2yukMZzckk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbXa45H%2FbtqySrRBdfP%2FEOcRgqcVbqZv2yukMZzckk%2Fimg.png" data-origin-width="660" data-origin-height="125" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<figure class="imageblock alignCenter" data-origin-width="314" data-origin-height="294"><span data-url="https://blog.kakaocdn.net/dn/bmI42r/btqyUfQHUsy/7T9z2yIk4FGKeBwgf0I1rK/img.png" data-phocus="https://blog.kakaocdn.net/dn/bmI42r/btqyUfQHUsy/7T9z2yIk4FGKeBwgf0I1rK/img.png"><img src="https://blog.kakaocdn.net/dn/bmI42r/btqyUfQHUsy/7T9z2yIk4FGKeBwgf0I1rK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbmI42r%2FbtqyUfQHUsy%2F7T9z2yIk4FGKeBwgf0I1rK%2Fimg.png" data-origin-width="314" data-origin-height="294" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<h3 data-ke-size="size23">&nbsp;</h3>
+<h3 data-ke-size="size23">5. 시계열 데이터 Model</h3>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span>비정상 과정 모형 중 가장 대표적인 것은 </span><span>ARMA </span><span>모형을 누적한 </span><span>ARIMA(auto-regressive integrated moving average) </span><span>모형</span><span></span></li>
+<li><span>ARIMA 모형은 과거 지식이나 경험을 바탕으로 한 행동에 따라 시계열이 움직이고 있음을 기초로 하는 것. </span></li>
+<li><span>과거의 관측값과 오차를 사용해서 현재의 시계열 값을 설명</span></li>
+<li><b><span>ARMA(Auto-regressive Moving Average)일반화 한것 -&gt; Stationary Series 에만 적용<br /></span></b></li>
+<li><span><b>ARIMA-&gt; Non stationary series&nbsp; 적용가능</b></span>
+<ul style="list-style-type: disc;">
+<li><span>Autoregressive : </span><span>자기회귀모형</span></li>
+<li><span>Moving Average : </span><span>이동평균모형</span></li>
+<li><span>자기 회귀와 이동 평균을 고려하는 모형</span></li>
+<li><span>시계열의 비정상성</span><span>(Non-stationary)</span><span>을 설명하기 위해 </span><span>관측지간의</span><span> 차분</span><span>(Difference)</span><span>을 사용한다는 차이점이 있음</span></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>규칙성을 만드는 패턴
+<ul style="list-style-type: disc;">
+<li>자기상관성(Autocorrelativeness) - 이전의 결과와 이후의 결과 사이에서 발생하는 현상</li>
+<li>이동평균(Moving Average) - 이전에 생긴 불규칙한 사건이 이후의 결과에 편향성을 초래하는 이동현상</li>
+</ul>
+</li>
+<li>White Noise
+<ul style="list-style-type: disc;">
+<li>많은 수계열 모형들이 불규칙한 패턴</li>
+<li>평균이 0이며 일정한 분산을 지닌 정규분포에서 추출된 임의의 수치라고 규정</li>
+<li>정규분포 가정은 모델의 해석을 전반적으로 편리하게 만들기 때문에 대부분의 통계 및 수리분석에서 채택</li>
+<li>회귀식에서 설명되지 않은 ERROR의 의미와 유사</li>
+<li>= Uncontrolable variable</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>5.0.&nbsp; 자기상관모형 -AR</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>자기 상관이란 Random Variable에 대해서 이전의 이후값이 영향을 미치고 있는 상황 이야기</li>
+<li>예를 들면 이전에 값이 크면 이후에는 낮은값이 나온다는 경향</li>
+<li>자기 상관성을 시계열 모형으로 구성한 것을 AR 모형이라고 부름</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5.1 이동평균 - MA 모형</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>시간이 지날수록 Random Variable의 평균값이 지속적으로 증가하거나 감소하는 경향이 생길 수 있음</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5.2 ARMA 모형</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>AR모형과 MA모형을 합친것</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>5.3 ARIMA 모델의 모수 의미&nbsp;</p>
+<p>&nbsp;</p>
+<p><figure class="imageblock alignCenter" data-origin-width="1385" data-origin-height="374"><span data-url="https://blog.kakaocdn.net/dn/WvaN4/btqyUgovBad/SYMSiCNjGvIYSIn92s1UmK/img.png" data-phocus="https://blog.kakaocdn.net/dn/WvaN4/btqyUgovBad/SYMSiCNjGvIYSIn92s1UmK/img.png"><img src="https://blog.kakaocdn.net/dn/WvaN4/btqyUgovBad/SYMSiCNjGvIYSIn92s1UmK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FWvaN4%2FbtqyUgovBad%2FSYMSiCNjGvIYSIn92s1UmK%2Fimg.png" data-origin-width="1385" data-origin-height="374" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<ul style="list-style-type: disc;">
+<li><span>현실에 존재하는 시계열 자료는 불안정</span><span>(Non-stationary)</span><span>한 경우가 많다</span></li>
+<li><b><span>AR(p), MA(q) </span><span>모형이나 이 둘을 합한 </span><span>ARMA(</span><span>p,q</span><span>)</span><span>모형으로는 이러한 불안정성을 설명할 수 없다</span><span>.</span></b></li>
+<li><span style="color: #ef5369;"><b>이러한 비 정상성을 제거하는 과정을 포함한 것이 ARIMA 모형이며 ARIMA(p,d,q)로 표현 &nbsp;</b></span></li>
+<li><span style="color: #ef5369;"><b>+ 과거의 데이터가 지니고 있던 '추세 Momentum'까지 반영하게 됨</b></span></li>
+<li><span style="color: #ef5369;"><b>Correlation뿐만 아니라 Cointegration까지 고려한 모델 </b></span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span>ARIMA</span><span>의 </span><span>모수는</span><span> 크게 </span><span>3</span><span>가지</span></li>
+<li><span>AR</span><span>모형의 </span><span>Lag</span><span>을 의미하는 </span><span>p, MA</span><span>모형의 </span><span>Lag</span><span>을 의미하는 </span><span>q, </span><span>차분</span><span>(</span><span>Diffrence</span><span>)</span><span>횟수를 의미하는 </span><span>d</span></li>
+<li><span>보통은 </span><span>p, d, q</span><span>의 순서</span></li>
+<li><span>p + q &lt; 2, p * q = 0 &rarr; p</span><span>나 </span><span>q </span><span>두개 중 하나는 </span><span>0</span><span>이라는 이야기</span>
+<ul style="list-style-type: disc;">
+<li><span>시계열 자료에서는 하나의 경향을 띄기 때문에</span><span>, </span><span>이렇게 사용하는 것이 더 잘 맞다</span></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span>5.3.1 p와 d, q 는 어떻게 정의할까?</span></p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span>ACF plot</span><span>와 </span><span>PACF plot</span><span>을 통해 </span><span>AR </span><span>및 </span><span>MA</span><span>의 </span><span>모수를</span><span> 추정</span></li>
+<li><span style="letter-spacing: 0px;">ACF(Autocorrelation function)</span><br />
+<ul style="list-style-type: disc;">
+<li><span style="letter-spacing: 0px;">Lag</span><span style="letter-spacing: 0px;">에 따른 관측치들 사이의 관련성을 측정하는 함수</span><span style="letter-spacing: 0px;"></span></li>
+</ul>
+</li>
+</ul>
+<p><figure class="imageblock alignCenter" data-origin-width="143" data-origin-height="43"><span data-url="https://blog.kakaocdn.net/dn/bZfc2U/btqyU8KjnmA/E98nhKcfZwJmdeAvibfK3K/img.png" data-phocus="https://blog.kakaocdn.net/dn/bZfc2U/btqyU8KjnmA/E98nhKcfZwJmdeAvibfK3K/img.png"><img src="https://blog.kakaocdn.net/dn/bZfc2U/btqyU8KjnmA/E98nhKcfZwJmdeAvibfK3K/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZfc2U%2FbtqyU8KjnmA%2FE98nhKcfZwJmdeAvibfK3K%2Fimg.png" data-origin-width="143" data-origin-height="43" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li><span style="letter-spacing: 0px;">PACF(Partial autocorrelation function)</span><br />
+<ul style="list-style-type: disc;">
+<li><span style="letter-spacing: 0px;">k </span><span style="letter-spacing: 0px;">이외의 모든 다른 시점 관측치의 영향력을 배제하고 </span><span style="letter-spacing: 0px;">y_k</span><span style="letter-spacing: 0px;">와 </span><span style="letter-spacing: 0px;">y_(k</span><span style="letter-spacing: 0px;">-1</span><span style="letter-spacing: 0px;">) </span><span style="letter-spacing: 0px;">&nbsp;</span><span style="letter-spacing: 0px;">두 관측치의 관련성을 측정하는 함수&nbsp;</span><span style="letter-spacing: 0px;"></span></li>
+</ul>
+</li>
+</ul>
+<p><figure class="imageblock alignCenter" data-origin-width="479" data-origin-height="29"><span data-url="https://blog.kakaocdn.net/dn/dm4UpV/btqySsbUHTN/E9bzKkaRdWFUQUgNxY3KGK/img.png" data-phocus="https://blog.kakaocdn.net/dn/dm4UpV/btqySsbUHTN/E9bzKkaRdWFUQUgNxY3KGK/img.png"><img src="https://blog.kakaocdn.net/dn/dm4UpV/btqySsbUHTN/E9bzKkaRdWFUQUgNxY3KGK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdm4UpV%2FbtqySsbUHTN%2FE9bzKkaRdWFUQUgNxY3KGK%2Fimg.png" data-origin-width="479" data-origin-height="29" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul style="list-style-type: square;" data-ke-list-type="square">
+<li><b><span>AR</span><span>의 특성 </span><span>-<span>&nbsp; </span>ACF</span><span>는 천천히 감소하고 </span><span>PACF</span><span>는 처음 시차를 제외하고 급격히 감소 </span><span>(0,1) </span></b></li>
+<li><b><span>MA</span><span>의 특성 </span><span>- ACF</span><span>는 급격히 감소하고 </span><span>PACF</span><span>는 천천히 감소</span></b><span><b> (1,0)</b> </span></li>
+<li><span>급격히 감소하는 시차를 각 </span><span>AR</span><span>과 </span><span>MA </span><span>모형의 </span><span>모수</span><span>(p, q)</span><span>로 사용</span></li>
+<li><span>데이터를 차분하여 </span><span>ACF </span><span>및 </span><span>PACF </span><span>계산함으로써 적절한 차분횟수까지 구할 수 있음</span><span></span></li>
+</ul>
+<p><figure class="imageblock alignCenter" data-origin-width="613" data-origin-height="412"><span data-url="https://blog.kakaocdn.net/dn/dquwIL/btqyRMvbvpx/vTIfTyod74qUUjRKBamaBk/img.png" data-phocus="https://blog.kakaocdn.net/dn/dquwIL/btqyRMvbvpx/vTIfTyod74qUUjRKBamaBk/img.png"><img src="https://blog.kakaocdn.net/dn/dquwIL/btqyRMvbvpx/vTIfTyod74qUUjRKBamaBk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdquwIL%2FbtqyRMvbvpx%2FvTIfTyod74qUUjRKBamaBk%2Fimg.png" data-origin-width="613" data-origin-height="412" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&lt;출처&gt;</p>
+<p>1. <a href="https://stats.stackexchange.com/questions/182764/stationarity-tests-in-r-checking-mean-variance-and-covariance" target="_blank" rel="noopener">스택익스체인지</a></p>
+<figure id="og_1570525406909" contenteditable="false" data-ke-type="opengraph" data-og-type="website" data-og-title="Stationarity Tests in R, checking mean, variance and covariance" data-og-description="This question was first asked on Stackoverflow, but as no one was able to answer, I wanted to ask it here. The question is: is there a test for stationarity that is both able to identify stationar..." data-og-host="stats.stackexchange.com" data-og-source-url="https://stats.stackexchange.com/questions/182764/stationarity-tests-in-r-checking-mean-variance-and-covariance" data-og-url="https://stats.stackexchange.com/questions/182764/stationarity-tests-in-r-checking-mean-variance-and-covariance" data-og-image="https://scrap.kakaocdn.net/dn/be0dLK/hyC9es4RpQ/jIh92sekpOJKJM8EWHGW40/img.png?width=316&amp;height=316&amp;face=0_0_316_316,https://scrap.kakaocdn.net/dn/LjWaX/hyC9fS2OAl/joUaaymE4ESj0JDkPaTqV1/img.jpg?width=794&amp;height=791&amp;face=0_0_794_791"><a href="https://stats.stackexchange.com/questions/182764/stationarity-tests-in-r-checking-mean-variance-and-covariance" target="_blank" rel="noopener" data-source-url="https://stats.stackexchange.com/questions/182764/stationarity-tests-in-r-checking-mean-variance-and-covariance">
+<div class="og-image" style="background-image: url('https://scrap.kakaocdn.net/dn/be0dLK/hyC9es4RpQ/jIh92sekpOJKJM8EWHGW40/img.png?width=316&amp;height=316&amp;face=0_0_316_316,https://scrap.kakaocdn.net/dn/LjWaX/hyC9fS2OAl/joUaaymE4ESj0JDkPaTqV1/img.jpg?width=794&amp;height=791&amp;face=0_0_794_791');">&nbsp;</div>
+<div class="og-text">
+<p class="og-title">Stationarity Tests in R, checking mean, variance and covariance</p>
+<p class="og-desc">This question was first asked on Stackoverflow, but as no one was able to answer, I wanted to ask it here. The question is: is there a test for stationarity that is both able to identify stationar...</p>
+<p class="og-host">stats.stackexchange.com</p>
+</div>
+</a></figure>
+<p>2. <a href="https://m.blog.naver.com/bluefish850/220749045909" target="_blank" rel="noopener">네이버 블로그</a></p>
+<p>&nbsp;</p></div>
+            <!-- System - START -->
+
+<!-- System - END -->
+
+                    <div class="container_postbtn #post_button_group">
+  <div class="postbtn_like"><script>window.ReactionButtonType = 'reaction';
+window.ReactionApiUrl = '//rosypark.tistory.com/reaction';
+window.ReactionReqBody = {
+    entryId: 51
+}</script>
+<div class="wrap_btn" id="reaction-51" data-tistory-react-app="Reaction"></div><div class="wrap_btn wrap_btn_share"><button type="button" class="btn_post sns_btn btn_share" aria-expanded="false" data-thumbnail-url="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F3dfoV%2FbtqySjM2RF2%2FFGQQ3O6UKLrfT9kzBbIZZk%2Fimg.png" data-title="시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법" data-description="1. 시계열(Time series) 데이터란? 시간에서 순차적으로 (sequentially) 관측한 값들의 집합 독립변수(Independent variable)를 이용하여 종속변수(Dependent variable)를 예측하는 일반적인 기계학습 방법론에 대하여 시간을 독립변수로 사용한다는 특징 독립변수로 시간을 사용하는 특성때문에 분석에 있어서 일반적인 방법론들과는 다른 몇가지 고려가 필요 2. 시계열 자료 분석 방법 일변량 시계열 분석 - {Yt ; t = 1,2,..,T}만을 가지고 분석 회귀분석(계량경제) 방법, BOX-JENKINS 방법 수학적 이론 모형에 의존하고 시간에 따라 변동이 많은 (빠른) 시계열 자료에 적용 지수 평활법, 시계열 분해 방법 다소 직관적인 방법이며 시간에 따른 변동이 느린.." data-profile-image="https://tistory1.daumcdn.net/tistory/3243557/attach/9d5a230c975b4d7b8552d668a4d6aa42" data-profile-name="RosyPark" data-pc-url="https://rosypark.tistory.com/51" data-relative-pc-url="/51" data-blog-title="Rosy's Artificial Intelligence Blog"><span class="ico_postbtn ico_share">공유하기</span></button>
+  <div class="layer_post" id="tistorySnsLayer"></div>
+</div><div class="wrap_btn wrap_btn_etc" data-entry-id="51" data-entry-visibility="public" data-category-visibility="public"><button type="button" class="btn_post btn_etc2" aria-expanded="false"><span class="ico_postbtn ico_etc">게시글 관리</span></button>
+  <div class="layer_post" id="tistoryEtcLayer"></div>
+</div></div>
+<button type="button" class="btn_menu_toolbar btn_subscription #subscribe" data-blog-id="3243557" data-url="https://rosypark.tistory.com/51" data-device="web_pc" data-tiara-action-name="구독 버튼_클릭"><em class="txt_state"></em><strong class="txt_tool_id">Rosy's Artificial Intelligence Blog</strong><span class="img_common_tistory ico_check_type1"></span></button>  <div data-tistory-react-app="SupportButton"></div>
+</div>
+
+                    <!-- PostListinCategory - START -->
+<div class="another_category another_category_color_gray">
+  <h4>'<a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5">인공지능</a> &gt; <a href="/category/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D">머신러닝</a>' 카테고리의 다른 글</h4>
+  <table>
+    <tr>
+      <th><a href="/58">[ML Algorithm] Gradient Boosting Machine</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2019.10.15</td>
+    </tr>
+    <tr>
+      <th><a href="/57">[ML Algorithm] 랜덤포레스트(Random Forest)</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2019.10.15</td>
+    </tr>
+    <tr>
+      <th><a href="/56">[ML Algorithm]  결정트리모델(Decision Tree Model)</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2019.10.15</td>
+    </tr>
+    <tr>
+      <th><a href="/55">[ML Algorithm] 앙상블 방법(Ensemble Method)</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2019.10.14</td>
+    </tr>
+    <tr>
+      <th><a href="/46">[ML Algorithm]  label encoding 과 one hot encoding</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2019.10.06</td>
+    </tr>
+  </table>
+</div>
+
+<!-- PostListinCategory - END -->
+
+				</div>
+				<div class="area_etc">
+					
+				</div>
+
+
+				<div class="area_reply ">
+
+
+					<strong class="tit_reply">댓글
+						<button type="button" class="btn_reply" onclick="$.Area.Comment.changeStatus();">
+							<span id="commentCount51_0">1</span>
+							<span class="ico_skin ico_reply">댓글펼치기</span>
+						</button>
+					</strong>
+
+
+
+					<!-- 대체텍스트 댓글펼치기/댓글접기 변경 -->
+					<div data-tistory-react-app="Namecard"></div><div id="entry51Comment">
+						<button type="button" class="btn_replymore">이전 댓글 보기</button>
+						
+							<ul class="list_reply">
+								            
+
+            <li id="none_display_division_for_comment_list_51" style="display: none;"></li>
+<script type="text/javascript">
+    setInitialEntryComments(51, 1726804725)
+</script>
+							</ul>
+						
+
+						     <form method="post" action="/comment/add/51" onsubmit="return false" style="margin: 0">
+         
+<fieldset class="fld_reply">
+	<legend class="screen_out">댓글쓰기 폼</legend>
+	<div class="reply_write ">
+		<label for="comment" class="lab_write"></label>
+		<textarea id="comment" name="comment" class="tf_reply" placeholder="여러분의 소중한 댓글을 입력해주세요" tabindex="1"></textarea>
+	</div>
+	<div class="reply_writer">
+		
+			
+				<div class="writer_info">
+					<span class="info_name ">
+						<span class="wrap_info">
+							<input type="text" name="name" id="name" class="inp_info" placeholder="이름" value="" tabindex="2">
+						</span>
+					</span>
+					<span class="info_pw ">
+						<span class="wrap_info">
+							<input type="password" name="password" id="password" class="inp_info" placeholder="비밀번호" tabindex="3">
+						</span>
+					</span>
+				</div>
+			
+			<div class="writer_check">
+				<span class="check_secret ">
+					<input type="checkbox" name="secret" id="secret" class="inp_secret" tabindex="4">
+					<label for="secret" class="lab_secret">
+						<span class="ico_skin ico_check"></span>비밀글
+					</label>
+				</span>
+
+			</div>
+
+		
+
+		<div class="writer_btn">
+			<button type="submit" class="btn_enter" onclick="addComment(this, 51); return false;" tabindex="5">입력</button>
+		</div>
+	</div>
+</fieldset>
+
+     </form>
+
+					</div>
+<script type="text/javascript">loadedComments[51]=true;
+findFragmentAndHighlight(51);</script>
+
+				</div>
+			</div>
+		
+	</div>
+
+                
+            
+
+				
+
+				
+
+
+				
+
+
+				<div id="mEtc" class="wrap_etc">
+					<div class="inner_aside">
+						
+								<!-- 공지사항 -->
+								
+									<div class="box_aside">
+										<strong>공지사항</strong>
+										<ul class="list_board">
+											
+										</ul>
+									</div>
+								
+							
+								<!-- 최근에 올라온 글 -->
+								<div class="box_aside">
+									<strong>최근에 올라온 글</strong>
+									<ul class="list_board">
+										
+											<li><a href="/571" class="link_board">[JAVA, JAVASCRIPT, PYTHON] ⋯</a></li>
+										
+											<li><a href="/645" class="link_board">[React] 제어 컴포넌트&amp; 비제어 컴포넌트  ⋯</a></li>
+										
+											<li><a href="/207" class="link_board">[HTML] HTML 기본 코드/요소</a></li>
+										
+											<li><a href="/521" class="link_board">[JAVA] IntelliJ 설정과 빌드도구(Ma⋯</a></li>
+										
+									</ul>
+								</div>
+							
+								<!-- 최근에 달린 댓글 -->
+								<div class="box_aside">
+									<strong>최근에 달린 댓글</strong>
+									<ul class="list_board">
+										
+											<li><a href="/268#comment14775217" class="link_board">주파수도메인에서 위상으로 영상처리하면 결과가 강건해집니⋯</a></li>
+										
+											<li><a href="/73#comment14734792" class="link_board">주파수도메인에서 위상으로 영상처리하면 결과가 강건해집니⋯</a></li>
+										
+											<li><a href="/37#comment14702939" class="link_board">주파수도메인에서 위상으로 신호처리하면 결과가 강건해집니⋯</a></li>
+										
+											<li><a href="/236#comment13422786" class="link_board">수정하겠습니다!</a></li>
+										
+									</ul>
+								</div>
+							
+								<!-- 방문자수 -->
+								<div class="box_aside lst">
+									<dl class="list_total">
+										<dt>Total</dt>
+										<dd>295,169</dd>
+									</dl>
+									<dl class="list_visitor">
+										<dt>Today</dt>
+										<dd>41</dd>
+									</dl>
+									<dl class="list_visitor">
+										<dt>Yesterday</dt>
+										<dd>136</dd>
+									</dl>
+								</div>
+							
+								<!-- 링크 -->
+								<div class="box_aside">
+									<strong>링크</strong>
+									<ul class="list_board">
+										
+									</ul>
+								</div>
+							
+								<!-- 태그 클라우드 -->
+								<div class="box_aside">
+									<strong>TAG</strong>
+									<ul class="list_tag">
+										
+											<li><a href="/tag/%E3%85%82" class="link_tag cloud5">ㅂ</a></li>
+										
+											<li><a href="/tag/%E3%85%A1" class="link_tag cloud5">ㅡ</a></li>
+										
+											<li><a href="/tag/q" class="link_tag cloud5">q</a></li>
+										
+											<li><a href="/tag/d" class="link_tag cloud5">d</a></li>
+										
+									</ul>
+									<a href="https://rosypark.tistory.com/tag" class="link_more">more</a>
+								</div>
+							
+								<!-- 달력 -->
+								<div class="box_aside">
+									<table class="tt-calendar" cellpadding="0" cellspacing="1" style="width: 100%; table-layout: fixed">
+  <caption class="cal_month"><a href="/archive/202408" title="1개월 앞의 달력을 보여줍니다.">«</a> &nbsp; <a href="/archive/202409" title="현재 달의 달력을 보여줍니다.">2024/09</a> &nbsp; <a href="/archive/202410" title="1개월 뒤의 달력을 보여줍니다.">»</a></caption>
+  <thead>
+    <tr>
+      <th class="cal_week2">일</th>
+      <th class="cal_week1">월</th>
+      <th class="cal_week1">화</th>
+      <th class="cal_week1">수</th>
+      <th class="cal_week1">목</th>
+      <th class="cal_week1">금</th>
+      <th class="cal_week1">토</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cal_week cal_current_week">
+      <td class="cal_day cal_day3 cal_day_sunday">1</td>
+      <td class="cal_day cal_day3">2</td>
+      <td class="cal_day cal_day3">3</td>
+      <td class="cal_day cal_day3">4</td>
+      <td class="cal_day cal_day3">5</td>
+      <td class="cal_day cal_day3">6</td>
+      <td class="cal_day cal_day3">7</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">8</td>
+      <td class="cal_day cal_day3">9</td>
+      <td class="cal_day cal_day3">10</td>
+      <td class="cal_day cal_day3">11</td>
+      <td class="cal_day cal_day3">12</td>
+      <td class="cal_day cal_day3">13</td>
+      <td class="cal_day cal_day3">14</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">15</td>
+      <td class="cal_day cal_day3">16</td>
+      <td class="cal_day cal_day3">17</td>
+      <td class="cal_day cal_day3">18</td>
+      <td class="cal_day cal_day3">19</td>
+      <td class="cal_day cal_day4">20</td>
+      <td class="cal_day cal_day3">21</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">22</td>
+      <td class="cal_day cal_day3">23</td>
+      <td class="cal_day cal_day3">24</td>
+      <td class="cal_day cal_day3">25</td>
+      <td class="cal_day cal_day3">26</td>
+      <td class="cal_day cal_day3">27</td>
+      <td class="cal_day cal_day3">28</td>
+    </tr>
+    <tr class="cal_week">
+      <td class="cal_day cal_day3 cal_day_sunday">29</td>
+      <td class="cal_day cal_day3">30</td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+      <td class="cal_day1 cal_day2"> </td>
+    </tr>
+  </tbody>
+</table>
+								</div>
+							
+								<!-- 글 보관함 -->
+								<div class="box_aside lst">
+									<strong>글 보관함</strong>
+									<ul class="list_keep">
+										
+											<li><a href="/archive/202209" class="link_keep">2022/09</a> (3)</li>
+										
+											<li><a href="/archive/202208" class="link_keep">2022/08</a> (1)</li>
+										
+											<li><a href="/archive/202206" class="link_keep">2022/06</a> (5)</li>
+										
+											<li><a href="/archive/202205" class="link_keep">2022/05</a> (14)</li>
+										
+									</ul>
+								</div>
+							
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr class="hide">
+		<div id="dkFoot" role="contentinfo" class="area_foot">
+			Blog is powered by
+			<em class="emph_t">Tistory</em> / Designed by
+			<em class="emph_t">Tistory</em>
+		</div>
+	</div>
+
+
+<script src="https://tistory1.daumcdn.net/tistory/3243557/skin/images/script.js?_version_=1598407294"></script>
+<script>
+	(function($) {
+		$.Area.init();
+	})(jQuery);
+</script>
+
+<div class="#menubar menu_toolbar toolbar_rc">
+  <h2 class="screen_out">티스토리툴바</h2>
+<div class="btn_tool"><button class="btn_menu_toolbar btn_subscription  #subscribe" data-blog-id="3243557" data-url="https://rosypark.tistory.com" data-device="web_pc"><strong class="txt_tool_id">Rosy's Artificial Intelligence Blog</strong><em class="txt_state">구독하기</em><span class="img_common_tistory ico_check_type1"></span></button></div></div>
+<div class="#menubar menu_toolbar "></div>
+<div class="layer_tooltip">
+  <div class="inner_layer_tooltip">
+    <p class="desc_g"></p>
+  </div>
+</div>
+<iframe id="editEntry" style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="//rosypark.tistory.com/api"></iframe>
+
+                <!-- DragSearchHandler - START -->
+<script src="//search1.daumcdn.net/search/statics/common/js/g/search_dragselection.min.js"></script>
+
+<!-- DragSearchHandler - END -->
+
+        <!-- SyntaxHighlight - START -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github.min.css" rel="stylesheet"/><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/delphi.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/php.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/python.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/r.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/ruby.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/scala.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/shell.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/sql.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/swift.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/typescript.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/languages/vbnet.min.js" defer></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+        <!-- SyntaxHighlight - END -->
+
+                
+                <div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/script/common.js"></script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/tistory-5be44087526e5ca9aed7f541aa54667508382f28/static/script/shortcut.js"></script>
+<script type="text/javascript">window.roosevelt_params_queue = window.roosevelt_params_queue || [{channel_id: 'dk', channel_label: '{tistory}'}]</script>
+<script type="text/javascript" src="//t1.daumcdn.net/midas/rt/dk_bt/roosevelt_dk_bt.js" async="async"></script>
+
+                
+                <script>window.tiara = {"svcDomain":"user.tistory.com","section":"글뷰","trackPage":"글뷰_보기","page":"글뷰","key":"3243557-51","customProps":{"userId":"0","blogId":"3243557","entryId":"51","role":"guest","trackPage":"글뷰_보기","filterTarget":false},"entry":{"entryId":"51","entryTitle":"시계열 데이터 정의와 시계열 자료 분석 방법 - 전통적방법","entryType":"POST","categoryName":"인공지능/머신러닝","categoryId":"726150","serviceCategoryName":null,"serviceCategoryId":null,"author":"3786029","authorNickname":"RosyPark","blogNmae":"Rosy's Artificial Intelligence Blog","image":"kage@3dfoV/btqySjM2RF2/FGQQ3O6UKLrfT9kzBbIZZk","plink":"/51","tags":[]},"kakaoAppKey":"3e6ddd834b023f24221217e370daed18","appUserId":"null"}</script>
+<script type="module" src="https://t1.daumcdn.net/tistory_admin/frontend/tiara/v1.0.5/index.js"></script>
+<script src="https://t1.daumcdn.net/tistory_admin/frontend/tiara/v1.0.5/polyfills-legacy.js" nomodule="true" defer="true"></script>
+<script src="https://t1.daumcdn.net/tistory_admin/frontend/tiara/v1.0.5/index-legacy.js" nomodule="true" defer="true"></script>
+
+                </body>
+
+</html>

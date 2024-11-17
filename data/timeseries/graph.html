@@ -1,0 +1,1700 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="그래프,순회,자료구조,파이썬,컴퓨터 사이언스," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="6mini.log" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="그래프에 대한 기본개념(인접 리스트, 인접 행렬). 순회를 알아보고 그래프와 트리 개념을 연관지어 이해">
+<meta name="keywords" content="그래프, 순회, 자료구조, 파이썬, 컴퓨터 사이언스">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[자료구조] 그래프(Graph)란?">
+<meta property="og:url" content="https://6mini.github.io/computer%20science/2021/12/02/graph/">
+<meta property="og:site_name" content="6mini.log">
+<meta property="og:description" content="그래프에 대한 기본개념(인접 리스트, 인접 행렬). 순회를 알아보고 그래프와 트리 개념을 연관지어 이해">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144201971-ff056d82-2631-4a36-9831-9906b1033286.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144203066-e8a73fd9-ce30-4053-9bd4-ea77f52a7602.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144203243-6151d6df-7639-4495-8fc8-2eaa75475342.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144236292-d5b608ea-43f9-448d-9de2-3a09e003fecb.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144236479-d99c1544-c568-4187-a527-7c3e52448f46.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144237344-04528252-8dd4-4231-979b-14a399ece785.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144237997-0c6d326a-34fa-439f-8753-d594cb2fc82c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144238371-d1f1fe03-3794-412d-9fd0-1f528d35ce09.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144238659-a1a9ef62-2eb7-4c88-9870-9651742fe415.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144238910-0f12a500-8a25-4c42-92f3-d0e3c3f491f3.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144238987-b0cafbcb-74cf-45d2-b37f-caf29ca3a8e0.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144239302-2af318d9-96b8-48a4-a0bc-51b7e5e76178.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144239434-6c08dded-0d4e-4bee-9f6d-fc3e02e863bd.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144240040-d3b4233b-47c2-4de4-9317-491f3da59169.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144240684-98534e98-cf35-4513-ba1f-443a237d52bd.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/79494088/144240918-ebfedc1a-9433-48cc-98ea-1b099f955cad.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[자료구조] 그래프(Graph)란?">
+<meta name="twitter:description" content="그래프에 대한 기본개념(인접 리스트, 인접 행렬). 순회를 알아보고 그래프와 트리 개념을 연관지어 이해">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/79494088/144201971-ff056d82-2631-4a36-9831-9906b1033286.png">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://6mini.github.io/"/>
+
+
+
+
+<!-- 구글 애드센스 -->
+<script data-ad-client="ca-pub-4061524058303875" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 자동 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4061524058303875"
+     crossorigin="anonymous"></script>
+<!-- 구글 애드센스 -->
+  <title>[자료구조] 그래프(Graph)란? | 6mini.log</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">6mini.log</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">개발자 이윤민의 기술 블로그
+        <a href="/computer%20science/2021/12/02/graph/"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=6mini.github.io/computer%20science/2021/12/02/graph/&count_bg=%23AAAAAA&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Hits&edge_flat=false" style="margin-top: 20px;"/></a>
+        </p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://6mini.github.io/computer%20science/2021/12/02/graph/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="6mini">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/shadow.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="6mini.log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            [자료구조] 그래프(Graph)란?
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-12-02T00:00:00+00:00">
+                2021-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Computer%20Science" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    그래프에 대한 기본개념(인접 리스트, 인접 행렬). 순회를 알아보고 그래프와 트리 개념을 연관지어 이해
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="그래프graph란">그래프(Graph)란?</h1>
+
+<h2 id="그래프의-기본-컨셉">그래프의 기본 컨셉</h2>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144201971-ff056d82-2631-4a36-9831-9906b1033286.png" alt="image" /></p>
+
+<ul>
+  <li>노드 간 연결될 수 있다는 점을 제외하고는 트리와 비슷하며, 루프를 형성할 수도 있다.</li>
+  <li>트리에서는 노드를 탐색하는 경우 제한이 있지만, 그래프는 루프 형성이 가능하기 때문에 다른 범위의 개념으로 필요한 자료구조이다.
+    <ul>
+      <li>예를 들어, 오브젝트간의 관계를 표현할 때 유용하다.(SNS, 도로상의 차량 검색, 운송 시스템)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144203066-e8a73fd9-ce30-4053-9bd4-ea77f52a7602.png" alt="image" /></p>
+
+<ul>
+  <li>그래프는 기본적으로 위 그림처럼 노드 또는 정점(vert)과 간선(edge)으로 연결되어있다.</li>
+</ul>
+
+<h3 id="그래프와-트리의-특징">그래프와 트리의 특징</h3>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144203243-6151d6df-7639-4495-8fc8-2eaa75475342.png" alt="image" /></p>
+
+<ul>
+  <li><strong>그래프는 노드간의 관계, 트리는 노드간의 계층을 표현한다.</strong></li>
+  <li>그래프와 트리는 서로 다른 개념이다.
+    <ul>
+      <li>트리에는 그래프에는 없는 계층 개념이 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="그래프의-유형">그래프의 유형</h2>
+<ul>
+  <li>그래프의 특성은 방향성(directed) 또는 무방향성(undirected)이다.</li>
+  <li>그래프가 한쪽 방향으로 설명될 수 있으면 directed 그래프가 가장 적합하다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144236292-d5b608ea-43f9-448d-9de2-3a09e003fecb.png" alt="image" /></p>
+
+<ul>
+  <li>방향성 그래프는 보는 것처럼 순서가 있으므로 마지막 노드(리프, leaf)가 있다.</li>
+  <li>위 그림에서는 ‘F’가 리프노드이다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144236479-d99c1544-c568-4187-a527-7c3e52448f46.png" alt="image" /></p>
+
+<ul>
+  <li>위처럼 방향성 그래프는 양방향(bidirectional)이 될 수도 있다.
+    <ul>
+      <li>예를 들어 모든 도로가 일방 통행이기 때문에 도로 지도는 방향이 지정되지만, 대부분의 거리는 양방향 도로로 구성된다.</li>
+    </ul>
+  </li>
+  <li>관계의 목적이 상호 교환이라면, 무방향 그래프가 가장 적합하다.</li>
+  <li>교환 관계는 항상 상호이므로 무방향 그래프가 여기에서 가장 의미가 있다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144237344-04528252-8dd4-4231-979b-14a399ece785.png" alt="image" /></p>
+
+<ul>
+  <li>위처럼 무방향성은 방향(화살표)이 따로 지정되어 있지 않다.</li>
+  <li>간선으로 연결된 노드들끼리는 서로 인접(adjacent)해 있다고 하며, 이웃(neighbor)이라고 지칭한다.</li>
+</ul>
+
+<h3 id="순환-및-비순환-그래프cyclic--acyclic-graphs">순환 및 비순환 그래프(Cyclic &amp; Acyclic Graphs)</h3>
+<ul>
+  <li>순환(루프)을 형성할 수 있는 경우(방문한 노드에 다시 방문) 그래프는 순환 그래프이다.
+    <ul>
+      <li>아래 이미지에서 B에서 시작한 다음 가장자리를 따라 C, E, D로 이동한 다음 B(이미 방문한 노드)로 돌아갈 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144237997-0c6d326a-34fa-439f-8753-d594cb2fc82c.png" alt="image" /></p>
+
+<ul>
+  <li>무방향 그래프는 항상 동일한 노드에 재방문할 수 있으므로 순환 그래프이다.</li>
+  <li>순환을 형성할 수 없는 경우(모서리를 따라 이미 방문한 노드에 방문할 수 없는 경우) 비순환 그래프라고 한다.</li>
+</ul>
+
+<h3 id="가중-그래프weighted-graphs">가중 그래프(Weighted Graphs)</h3>
+<ul>
+  <li>가중 그래프는 각 엣지(edge)의 가중치에 할당된 특정값을 호출한다.</li>
+  <li>가중치는 서로 다른 그래프에서 서로 다른 데이터를 나타낸다.</li>
+  <li>예를 들어, 도로 구간을 나타내는 그래프에서 가중치는 도로의 길이를 나타낼 수 있다.</li>
+  <li>그래프에서 경로의 총 가중치가 높을수록 경로이동시간(비용)이 길어진다.
+    <ul>
+      <li>가중치는 모든 경로 비교 시, 어떤 경로를 선택할 지에 사용된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144238371-d1f1fe03-3794-412d-9fd0-1f528d35ce09.png" alt="image" /></p>
+
+<ul>
+  <li>순회는 그래프에 연결된 노드를 탐색한다.</li>
+  <li>중요한 것은 아직 방문하지 않은 노드의 순회 순서이다.</li>
+  <li>순회개념은 향후 배우게 되는 DFS, BFS와 같은 순회 알고리즘과 연관되어 있다.</li>
+</ul>
+
+<h3 id="dagsdirected-acyclic-graphs">DAGs(Directed Acyclic Graphs)</h3>
+<ul>
+  <li>방향성 비순환 그래프(DAG)는 순환되지 않고 특정한 단방향 그래프이다.</li>
+  <li>즉, 아래 그림처럼 edge가 순서대로 향하도록 DAG의 노드를 선형(단방향)으로 정렬할 수 있다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144238659-a1a9ef62-2eb7-4c88-9870-9651742fe415.png" alt="image" /></p>
+
+<h1 id="그래프의-활용">그래프의 활용</h1>
+<ul>
+  <li>그래프를 나타내는 두가지 방법은 인접 리스트(adjacency lists)와 인접 행렬(adjacency)이다.</li>
+  <li>그래프를 구현할 때 저장할 데이터 유형과 그래프에서 실행해야하는 작업을 이해하는 것이 중요하다.</li>
+  <li>아래 그림은 인접 행렬과 인접 리스트를 사용하여 그래프를 표현하는 방법의 예이다.
+    <ul>
+      <li>각 유형을 사용할 때, verts C와 D 사이의 관계를 어떻게 표현하는 지가 중요하다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144238910-0f12a500-8a25-4c42-92f3-d0e3c3f491f3.png" alt="image" /></p>
+
+<h2 id="인접-리스트adjacency-list">인접 리스트(Adjacency List)</h2>
+<ul>
+  <li>인접 리스트에서 그래프는 전체 노드 목록을 저장한다.</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144238987-b0cafbcb-74cf-45d2-b37f-caf29ca3a8e0.png" alt="image" /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="c1"># 위 그림에 대해 딕셔너리를 사용한 인접리스트 예시
+# 노드가 키가 되고, 인접노드가 값이 되는 딕셔너리이다.
+# 가장자리 노드들은 set으로 구현되어 있다.
+</span>
+<span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="s">"A"</span><span class="p">:</span> <span class="p">{</span><span class="s">"B"</span><span class="p">},</span>      <span class="c1"># 여기서 {"B"}가 set의 형태이다.
+</span>                            <span class="s">"B"</span><span class="p">:</span> <span class="p">{</span><span class="s">"C"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">},</span> <span class="c1"># {"B" : {}}의 형태는 딕셔너리
+</span>                            <span class="s">"C"</span><span class="p">:</span> <span class="p">{</span><span class="s">"E"</span><span class="p">},</span>      <span class="c1"># 즉, 딕셔너리 안에 set이 있는 것이다.
+</span>                            <span class="s">"D"</span><span class="p">:</span> <span class="p">{</span><span class="s">"F"</span><span class="p">,</span> <span class="s">"G"</span><span class="p">},</span>
+                            <span class="s">"E"</span><span class="p">:</span> <span class="p">{</span><span class="s">"C"</span><span class="p">},</span>
+                            <span class="s">"F"</span><span class="p">:</span> <span class="p">{</span><span class="s">"C"</span><span class="p">},</span>
+                            <span class="s">"G"</span><span class="p">:</span> <span class="p">{</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">}</span>
+                        <span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<ul>
+  <li>정점(vertices)은 O(1) 상수 시간에 각 간선(edge)에 접근할 수 있다.
+    <ul>
+      <li>edge가 set에 포함되어 있기 때문에 O(1) 상수 시간에 edge가 있는 지 확인할 수 있다.</li>
+      <li>예를 들어, A가 G set에 포함되어 있다는 뜻이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4061524058303875" crossorigin="anonymous"></script>
+
+<!-- 이윤민 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4061524058303875" data-ad-slot="4491323515" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="인접-행렬adjacency-matrix">인접 행렬(Adjacency Matrix)</h2>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144239302-2af318d9-96b8-48a4-a0bc-51b7e5e76178.png" alt="image" /></p>
+
+<ul>
+  <li>위 그림을 소스코드로 작성하기 전, 0과 1로 구성되는 행렬 부분(노드간 연결)이 어떤 부분인지 그림으로 그리면 아래와 같다.
+    <ul>
+      <li>행 노드와 연결되는 열 노드에 대해 1 값이 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144239434-6c08dded-0d4e-4bee-9f6d-fc3e02e863bd.png" alt="image" /></p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code><span class="c1"># 리스트로 구현한 인접행렬
+# 아래 코드처럼 위의 간선 가중치는 1이다.
+</span>
+<span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">edges</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<ul>
+  <li>위에서 행렬은 리스트 안에 리스트가 있는 2차원 배열로 표현된다.
+    <ul>
+      <li>구현을 통해 기본 제공되는 행렬 간에 간선 가중치(edge weights)를 알 수 있다.</li>
+      <li>0은 관계가 없음을 나타내지만 다른 값은 edge label 또는 edge weight을 나타낸다.</li>
+      <li>인접 행렬의 단점은 노드 값과 해당 인덱스 사이에 연관성이 없다는 것이다.</li>
+    </ul>
+  </li>
+  <li>실제로 인접 리스트와 인접 행렬을 모두 구현하면 정점(Vertex) 및 간선 클래스를 포함하여 더 많은 정보를 파악할 수 있다.</li>
+</ul>
+
+<h2 id="그래프에서의-복잡도">그래프에서의 복잡도</h2>
+<ul>
+  <li>인접 리스트는 리스트의 개념을 활용하고, 인접 행렬은 코드에서 볼 수 있듯이 배열의 개념을 활용한다.
+    <ul>
+      <li>인접 행렬의 특징은 구현이 쉽다는 것이다.</li>
+      <li>때문에 인접 행렬의 가장 큰 단점은 특정 노드에 방문한 노드들을 알기 위해서 모든 노드를 확인해야 한다는 점이다.(시간 복잡도 O(N))</li>
+      <li>이러한 단점을 위해 인접 리스트로 표현 방식이 생겼다.</li>
+    </ul>
+  </li>
+  <li>인접 리스트는 실제 연결된 관계만을 저장해주기 때문에 실행 시간에 영향을 적게 준다.
+    <ul>
+      <li>인접 리스트의 단점은 특정 노드 간의 연결 관계를 확인하기 위해서는 반복문이 활용되어야 한다는 것이다.(O(N))</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144240040-d3b4233b-47c2-4de4-9317-491f3da59169.png" alt="image" /></p>
+
+<h3 id="인접-리스트-구현">인접 리스트 구현</h3>
+<ul>
+  <li>이 코드와 위 인접 리스트 코드의 차이점은 간선에 가중치를 부여할 수 있다는 것이다.</li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11</pre></td><td class="code"><pre class="highlight"><code><span class="c1"># 인접리스트 구현
+</span>
+<span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="s">"A"</span><span class="p">:</span> <span class="p">{</span><span class="s">"B"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>          <span class="c1"># 가중치 부여
+</span>                            <span class="s">"B"</span><span class="p">:</span> <span class="p">{</span><span class="s">"C"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"D"</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>  <span class="c1"># 가중치 부여
+</span>                            <span class="s">"C"</span><span class="p">:</span> <span class="p">{},</span>
+                            <span class="s">"D"</span><span class="p">:</span> <span class="p">{},</span>
+                            <span class="s">"E"</span><span class="p">:</span> <span class="p">{</span><span class="s">"D"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>           <span class="c1"># 가중치 부여
+</span>                        <span class="p">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="인접-행렬-구현">인접 행렬 구현</h3>
+<ul>
+  <li>행렬의 한 가지 이점은 간선 가중치를 표현하는 것이 쉽다.</li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="c1"># 인접행렬 구현
+</span>
+<span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">edges</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h1 id="순회traversal">순회(Traversal)</h1>
+
+<h2 id="순회-기본-개념">순회 기본 개념</h2>
+<ul>
+  <li>순회는 그래프 또는 트리처럼 연결된 구조에서 노드를 한 번씩 탐색하는 개념이다.</li>
+  <li>순회의 주 목적은 모든 노드 또는 특정 노드를 방문하는 방법을 찾는 것이다.</li>
+  <li>BST(이진 검색 트리)와 다른 규칙이 적용되며 방향에 따라 탐색 방법이 달라질 수 있다.</li>
+</ul>
+
+<h3 id="그래프와-트리의-순회-구분">그래프와 트리의 순회 구분</h3>
+<ul>
+  <li>그래프의 순회는 DFS(깊이 우선 탐색), BFS(너비 우선 탐색) 방법이 있다.
+    <ul>
+      <li>이 두가지는 탐색 알고리즘이다.</li>
+    </ul>
+  </li>
+  <li>트리의 순회는 전위, 중위, 후위 순회이다.
+    <ul>
+      <li>그래프는 루트, 부모, 자식 노드 개념이 없지만 전위, 중위 후위 순회의 순회 개념을 활용하여 DFS, BFS를 구현할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144240684-98534e98-cf35-4513-ba1f-443a237d52bd.png" alt="image" /></p>
+
+<ul>
+  <li>전위 순회(preorder traverse): 루트를 먼저 방문</li>
+  <li>중위 순회(inorder traverse): 왼쪽 서브 트리를 방문 후 루트 방문</li>
+  <li>후위 순회(postorder traverse): 순서대로 서브 트리를 모두 방문 후 루트를 방문</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/79494088/144240918-ebfedc1a-9433-48cc-98ea-1b099f955cad.png" alt="image" /></p>
+
+<ul>
+  <li>위의 트리에 대해 순회를 구현할 것이다.
+    <ul>
+      <li>루트는 1개(10)이다.</li>
+      <li>부모 노드는 트리 별 1개씩이니 총 4개이다.(8, 1, 9, 12)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49</pre></td><td class="code"><pre class="highlight"><code><span class="c1"># 수도코드로 배우는 트리순회
+</span>
+<span class="c1"># 먼저 순회를 진행하기 위해 트리형태의 노드들을 생성한다.
+</span><span class="k">class</span> <span class="nc">node</span><span class="p">:</span>
+
+  <span class="c1"># root -&gt; left -&gt; right 방향대로 노드 생성
+</span>  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span> 
+    <span class="n">value</span>  
+    <span class="n">left</span>    
+    <span class="n">right</span>  
+
+<span class="n">root_node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span>
+                 <span class="n">node</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> 
+                      <span class="n">node</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>  
+                      <span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> 
+                           <span class="n">node</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                           <span class="p">)</span>
+                      <span class="p">),</span>
+                 <span class="n">node</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> 
+                      <span class="n">node</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> 
+                      <span class="n">node</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> 
+                           <span class="n">node</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+                           <span class="p">)</span>
+                      <span class="p">)</span>
+                 <span class="p">)</span>
+
+
+<span class="c1"># 전위 순회 
+</span><span class="k">def</span> <span class="nf">pre_order</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+
+  <span class="k">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>       <span class="c1"># 루트노드
+</span>  <span class="n">pre_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>    <span class="c1"># 왼쪽노드
+</span>  <span class="n">pre_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>   <span class="c1"># 오른쪽노드
+</span>
+
+<span class="c1"># 중위 순회
+</span><span class="k">def</span> <span class="nf">in_order</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+
+  <span class="n">in_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>    <span class="c1"># 왼쪽노드
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>      <span class="c1"># 루트노드
+</span>  <span class="n">in_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>   <span class="c1"># 오른쪽노드
+</span>
+
+<span class="c1"># 후위 순회
+</span><span class="k">def</span> <span class="nf">post_order</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+
+  <span class="n">post_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>   <span class="c1"># 왼쪽노드
+</span>  <span class="n">post_order</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>  <span class="c1"># 오른쪽노드
+</span>  <span class="k">print</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>       <span class="c1"># 루트노드
+</span></code></pre></td></tr></tbody></table></div></div>
+
+<h1 id="참조">참조</h1>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=cUEQmPh57MU">[#컴퓨테이셔널디자인 13] 자료구조, 그래프 / Data Structure for design , Graph 1/2</a></li>
+  <li><a href="https://shoark7.github.io/insight/rationality/relationship-between-graph-and-tree">그래프와 트리의 관계에 대한 고찰</a></li>
+  <li><a href="https://tech.kakao.com/2016/01/29/opensource-1-s2graph/">kakao의 오픈소스 Ep1 – 대용량 분산 그래프DB “S2Graph”</a></li>
+  <li><a href="https://programmers.co.kr/learn/courses/30/parts/14393">그래프에 대한 문제해결</a></li>
+  <li><a href="https://leetcode.com/problemset/all/?topicSlugs=graph&amp;difficulty=Medium">그래프를 활용한 다양한 상황</a></li>
+</ul>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+      
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4061524058303875"
+crossorigin="anonymous"></script>
+<!-- 이윤민 -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-4061524058303875"
+data-ad-slot="4491323515"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/%EA%B7%B8%EB%9E%98%ED%94%84" rel="tag"># 그래프</a>
+          
+            
+            <a href="/tag/#/%EC%88%9C%ED%9A%8C" rel="tag"># 순회</a>
+          
+            
+            <a href="/tag/#/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0" rel="tag"># 자료구조</a>
+          
+            
+            <a href="/tag/#/%ED%8C%8C%EC%9D%B4%EC%8D%AC" rel="tag"># 파이썬</a>
+          
+            
+            <a href="/tag/#/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4" rel="tag"># 컴퓨터 사이언스</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/computer%20science/2021/12/03/bfs-dfs/" rel="next" title="[알고리즘] BFS와 DFS란?">
+                <i class="fa fa-chevron-left"></i> [알고리즘] BFS와 DFS란?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/tada%20english%20study/2021/12/01/heteroskedasticity/" rel="prev" title="[ML] Heteroscedasticity">
+                [ML] Heteroscedasticity <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+  
+    <div class="comments" id="comments">
+      <!-- 코스모스팜 소셜댓글 시작 -->
+      <script id="cosmosfarm-comments-script" type="text/javascript" src="https://plugin.cosmosfarm.com/comments.js"></script>
+      <div id="cosmosfarm-comments" data-plugin-id="1788605600129813" data-href="https://6mini.github.io//computer%20science/2021/12/02/graph/" data-width="100%" data-row="10"><a href="http://www.cosmosfarm.com/plugin/comments">코스모스팜 소셜댓글</a></div>
+      <!-- 코스모스팜 소셜댓글 종료 -->
+    </div>
+  
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+  <!-- <div class="comments" id="comments">
+    
+  </div> -->
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/shadow.jpg"
+               alt="6mini" />
+          <p class="site-author-name" itemprop="name">6mini</p>
+           
+              <p class="site-description motion-element" itemprop="description">Change the world with DATA</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">207</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">426</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+        
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/6mini" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/6mini/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="http://www.sixtest.site/" target="_blank" title="SixTest">
+                  
+                    <i class="fa fa-fw fa-search"></i>
+                  
+                  SixTest
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://cother.herokuapp.com/" target="_blank" title="Co-Ther19">
+                  
+                    <i class="fa fa-fw fa-certificate"></i>
+                  
+                  Co-Ther19
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://fasi.herokuapp.com/" target="_blank" title="FASI">
+                  
+                    <i class="fa fa-fw fa-male"></i>
+                  
+                  FASI
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/sixpotify" target="_blank" title="Sixpotify">
+                  
+                    <i class="fa fa-fw fa-headphones"></i>
+                  
+                  Sixpotify
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#그래프graph란"> <span class="nav-number">1</span> <span class="nav-text">그래프(Graph)란?</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#그래프의-기본-컨셉"> <span class="nav-number">1.1</span> <span class="nav-text">그래프의 기본 컨셉</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#그래프와-트리의-특징"> <span class="nav-number">1.1.1</span> <span class="nav-text">그래프와 트리의 특징</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#그래프의-유형"> <span class="nav-number">1.2</span> <span class="nav-text">그래프의 유형</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#순환-및-비순환-그래프cyclic--acyclic-graphs"> <span class="nav-number">1.2.1</span> <span class="nav-text">순환 및 비순환 그래프(Cyclic &amp; Acyclic Graphs)</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#가중-그래프weighted-graphs"> <span class="nav-number">1.2.2</span> <span class="nav-text">가중 그래프(Weighted Graphs)</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#dagsdirected-acyclic-graphs"> <span class="nav-number">1.2.3</span> <span class="nav-text">DAGs(Directed Acyclic Graphs)</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#그래프의-활용"> <span class="nav-number">2</span> <span class="nav-text">그래프의 활용</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#인접-리스트adjacency-list"> <span class="nav-number">2.1</span> <span class="nav-text">인접 리스트(Adjacency List)</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#인접-행렬adjacency-matrix"> <span class="nav-number">2.2</span> <span class="nav-text">인접 행렬(Adjacency Matrix)</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#그래프에서의-복잡도"> <span class="nav-number">2.3</span> <span class="nav-text">그래프에서의 복잡도</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#인접-리스트-구현"> <span class="nav-number">2.3.1</span> <span class="nav-text">인접 리스트 구현</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#인접-행렬-구현"> <span class="nav-number">2.3.2</span> <span class="nav-text">인접 행렬 구현</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#순회traversal"> <span class="nav-number">3</span> <span class="nav-text">순회(Traversal)</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-2"> <a class="nav-link" href="#순회-기본-개념"> <span class="nav-number">3.1</span> <span class="nav-text">순회 기본 개념</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#그래프와-트리의-순회-구분"> <span class="nav-number">3.1.1</span> <span class="nav-text">그래프와 트리의 순회 구분</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#참조"> <span class="nav-number">4</span> <span class="nav-text">참조</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+        
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  
+  &copy;  2021 - 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">6mini</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+
+  
+
+
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+

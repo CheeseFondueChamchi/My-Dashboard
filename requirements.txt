@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+pillow  # 이미지 처리를 위한 
+streamlit-autorefresh
+plotly
+pyttsx3==2.90
+TTS>=0.22.0
