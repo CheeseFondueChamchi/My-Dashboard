@@ -3,7 +3,7 @@ My_Dashboard
 This repository generates Docker images for an interactive dashboard built using the Streamlit library. The instructions below guide you through setting up, building, and deploying the Docker container for the Streamlit dashboard.
 
 
-Setting Up Docker
+# Setting Up Docker
 
 1. Create a Directory for Docker Files
 mkdir my-container
