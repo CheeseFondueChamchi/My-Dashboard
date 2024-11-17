@@ -1,6 +1,7 @@
 # My_Dashboard
 
 This repository generates Docker images for an interactive dashboard built using the Streamlit library. The instructions below guide you through setting up, building, and deploying the Docker container for the Streamlit dashboard.
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/c5cb9bbc-bc60-4d4e-8fa3-87fe6f183ca4">
 
 ---------------------------------------------------------------------------------------------------------
 
