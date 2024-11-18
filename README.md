@@ -66,6 +66,6 @@ This repository generates Docker images for an interactive dashboard built using
 
 Notes
 
-When building for ARM64 (e.g., Apple M1/M2 chips), consider compatibility by specifying --platform linux/amd64.
-Ensure requirements.txt includes all necessary Python libraries for your Streamlit application.
-Use volume mounting (-v $(pwd):/app) to keep local files synchronized with the container during development.
+- When building for ARM64 (e.g., Apple M1/M2 chips), consider compatibility by specifying --platform linux/amd64.
+- Ensure requirements.txt includes all necessary Python libraries for your Streamlit application.
+- Use volume mounting (-v $(pwd):/app) to keep local files synchronized with the container during development.
